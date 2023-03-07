@@ -18,13 +18,10 @@ class AdminUserController extends Controller
 
         $this->admin = User::find(auth()->user()->id);
         $this->admin->name = $request->name;
-        $this->admin->email = $request->email;
-        $this->admin->password = bcrypt($request->password);
         $this->admin->description = $request->description;
         if ($request->file('image')!=null){
             $this->admin->image = $this->saveImage($request);
         }
-
         $this->admin->save();
         return redirect()->back()->with('success', 'Profile Updated Successfully');
 
@@ -37,5 +34,27 @@ class AdminUserController extends Controller
         $imageurl = $directory.$imageName;
         $image->move($directory,$imageName);
         return $imageurl;
+    }
+
+    public function password(){
+        return view('admin.user.password',[
+            'user'=> User::find(auth()->user()->id),
+        ]);
+    }
+    public $user;
+
+    public function updatePassword(Request $request){
+        $this->validate($request, [
+            'name' => 'required',
+            'email' => 'required',
+            'password' => 'required|min:8',
+        ]);
+
+        $this->user = User::find(auth()->user()->id);
+        $this->user->name = $request->name;
+        $this->user->email = $request->email;
+        $this->user->password = bcrypt($request->password);
+        $this->user->save();
+        return redirect()->back()->with('success','User Updated');
     }
 }

@@ -1,6 +1,5 @@
 <header>
     <div class="header-wraper jl_header_magazine_style two_header_top_style header_layout_style3_custom jl_cusdate_head">
-
     <!-- Start Main menu -->
     <div class="jl_blank_nav"></div>
     <div id="menu_wrapper" class="menu_wrapper jl_menu_sticky jl_stick">
@@ -27,9 +26,6 @@
                                 <a href="{{route('category.wise.blog',$header_category->slug)}}">{{$header_category->name}}<span class="border-menu"></span></a>
                             </li>
                             @endforeach
-                            <li class="menu-item">
-                                <a href="active.html">About<span class="border-menu"></span></a>
-                            </li>
                         </ul>
                     </div>
                     <!-- end main menu -->
@@ -61,36 +57,10 @@
                 <a href="{{route('category.wise.blog',$header_category->slug)}}">{{$header_category->name}}<span class="border-menu"></span></a>
             </li>
             @endforeach
-            <li class="menu-item">
-                <a href="active.html">About<span class="border-menu"></span></a>
-            </li>
         </ul>
         <span class="jl_none_space"></span>
         <div id="disto_about_us_widget-2" class="widget jellywp_about_us_widget">
-            <div class="widget_jl_wrapper about_widget_content">
-                <div class="jellywp_about_us_widget_wrapper">
-                    <div class="social_icons_widget">
-                        <ul class="social-icons-list-widget icons_about_widget_display">
-                            <li>
-                                <a href="#" class="facebook" target="_blank"><i class="fa fa-facebook"></i></a>
-                            </li>
-                            <li>
-                                <a href="#" class="google_plus" target="_blank"><i class="fa fa-google-plus"></i></a>
-                            </li>
-                            <li>
-                                <a href="#" class="behance" target="_blank"><i class="fa fa-behance"></i></a>
-                            </li>
-                            <li>
-                                <a href="#" class="vimeo" target="_blank"><i class="fa fa-vimeo-square"></i></a>
-                            </li>
-                            <li>
-                                <a href="#" class="youtube" target="_blank"><i class="fa fa-youtube"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <span class="jl_none_space"></span>
-            </div>
+
         </div>
     </div>
 </div>

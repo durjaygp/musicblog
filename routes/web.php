@@ -58,6 +58,10 @@ Route::group(['prefix'=>'admin/','middleware'=>'auth'],function(){
     Route::get('/user/settings', [AdminUserController::class, 'index'])->name('admin.user');
     Route::post('user/setting/update',[AdminUserController::class, 'update'])->name('admin.user.update');
 
+
+    Route::get('/user/password', [AdminUserController::class, 'password'])->name('admin.password');
+    Route::post('/user/password/update', [AdminUserController::class, 'updatePassword'])->name('password.update');
+
     //-------Website Settings------------
     Route::get('/website/settings/', [WebsiteSettingController::class, 'index'])->name('admin.setting');
     Route::post('/website/settings/update', [WebsiteSettingController::class, 'update'])->name('update.setting');
