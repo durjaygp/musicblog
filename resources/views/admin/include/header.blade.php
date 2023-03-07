@@ -28,11 +28,8 @@
             <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                 <h3 class="dropdown-item dropdown-header">{{ Auth::user()->name }}</h3>
                 <div class="dropdown-divider"></div>
-                <a href="#" class="dropdown-item">
-                    <i class="fas fa-edit mr-2"></i> Edit Profile
-                </a>
                 <div class="dropdown-divider"></div>
-                <a href="#" class="dropdown-item">
+                <a href="{{route('admin.password')}}" class="dropdown-item">
                     <i class="fas fa-lock mr-2"></i> Change Password
                 </a>
                 <div class="dropdown-divider"></div>
