@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 07, 2023 at 10:34 AM
--- Server version: 10.4.25-MariaDB
--- PHP Version: 8.1.10
+-- Generation Time: Mar 07, 2023 at 12:56 PM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 8.1.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `musicapp`
+-- Database: `musicblog`
 --
 
 -- --------------------------------------------------------
@@ -29,11 +29,11 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `blogs` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `slug` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `body` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `image` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `slug` varchar(255) NOT NULL,
+  `description` text NOT NULL,
+  `body` text NOT NULL,
+  `image` text NOT NULL,
   `category_id` bigint(20) UNSIGNED NOT NULL,
   `user_id` bigint(20) UNSIGNED NOT NULL,
   `status` tinyint(4) NOT NULL DEFAULT 1,
@@ -47,23 +47,23 @@ CREATE TABLE `blogs` (
 --
 
 INSERT INTO `blogs` (`id`, `title`, `slug`, `description`, `body`, `image`, `category_id`, `user_id`, `status`, `feature`, `created_at`, `updated_at`) VALUES
-(1, 'Modi maxime hic quis', 'dfdf-fdfd', 'Quia esse impedit o', 'Anim omnis impedit, .&nbsp;', 'upload/blog-image/1868036532.png', 1, 1, 1, NULL, '2023-03-03 08:21:26', '2023-03-03 08:21:26'),
-(2, 'Maiores corrupti ul', 'tfgfg-54', 'Enim eum est nostrum', 'Adipisicing anim odi. Adipisicing anim odi. Adipisicing anim odi. Adipisicing anim odi. Adipisicing anim odi. Adipisicing anim odi. Adipisicing anim odi. Adipisicing anim odi. Adipisicing anim odi. Adipisicing anim odi. Adipisicing anim odi. Adipisicing anim odi. Adipisicing anim odi. Adipisicing anim odi. Adipisicing anim odi. Adipisicing anim odi. Adipisicing anim odi. Adipisicing anim odi. Adipisicing anim odi. Adipisicing anim odi. Adipisicing anim odi. Adipisicing anim odi. Adipisicing anim odi. Adipisicing anim odi. Adipisicing anim odi. Adipisicing anim odi. Adipisicing anim odi. Adipisicing anim odi. Adipisicing anim odi. Adipisicing anim odi. Adipisicing anim odi. Adipisicing anim odi. Adipisicing anim odi. Adipisicing anim odi.&nbsp;', 'upload/blog-image/784292447.png', 1, 1, 1, NULL, '2023-03-03 08:24:24', '2023-03-03 08:24:24'),
-(3, 'Facere et in molesti', 'cvgv-5', 'Illo eiusmod aute qu', 'Deleniti rerum quia .&nbsp;', 'upload/blog-image/1072099063.png', 1, 1, 1, NULL, '2023-03-03 10:30:23', '2023-03-03 10:30:23'),
-(4, 'Amet lorem proident', 'fgghh-45', 'Aut veritatis enim d', 'Ut accusamus quo vol. tui kor', 'upload/blog-image/135172545.png', 1, 1, 1, 1, '2023-03-03 10:44:27', '2023-03-03 10:44:27'),
-(5, 'dsfsd', 'fdfdf-gfgf5', 'sdfsdf', '<p>sdfsd</p>', 'upload/blog-image/47671536.png', 1, 1, 1, 1, '2023-03-03 10:45:33', '2023-03-03 10:45:33'),
-(6, 'Optio rerum atque v', 'fffdgf-fgf', 'Deleniti obcaecati q', 'Ut ex ut at assumend.&nbsp;', 'upload/blog-image/2108210837.jpg', 1, 1, 1, 1, '2023-03-04 04:09:34', '2023-03-04 04:09:34'),
-(7, 'Qui laudantium maxi', 'ffgf-55', 'Sunt cum consequat', 'Distinctio. Ad labor.&nbsp;', 'upload/blog-image/90395079.jpg', 1, 1, 1, 1, '2023-03-04 04:11:12', '2023-03-04 04:11:12'),
-(9, 'Sunt quo ut qui est', 'dd-fd5', 'Nemo excepteur aperi', 'Culpa dolor dolore f.&nbsp;', 'upload/blog-image/1600276973.jpg', 1, 1, 1, 1, '2023-03-04 04:54:59', '2023-03-04 04:54:59'),
+(1, 'Modi maxime hic quis', 'dfdf-fdfd', 'Quia esse impedit o', 'Anim omnis impedit, .&nbsp;', 'upload/blog-image/1868036532.png', 2, 1, 1, NULL, '2023-03-03 08:21:26', '2023-03-07 04:53:49'),
+(2, 'Maiores corrupti ul', 'tfgfg-54', 'Enim eum est nostrum', 'Adipisicing anim odi. Adipisicing anim odi. Adipisicing anim odi. Adipisicing anim odi. Adipisicing anim odi. Adipisicing anim odi. Adipisicing anim odi. Adipisicing anim odi. Adipisicing anim odi. Adipisicing anim odi. Adipisicing anim odi. Adipisicing anim odi. Adipisicing anim odi. Adipisicing anim odi. Adipisicing anim odi. Adipisicing anim odi. Adipisicing anim odi. Adipisicing anim odi. Adipisicing anim odi. Adipisicing anim odi. Adipisicing anim odi. Adipisicing anim odi. Adipisicing anim odi. Adipisicing anim odi. Adipisicing anim odi. Adipisicing anim odi. Adipisicing anim odi. Adipisicing anim odi. Adipisicing anim odi. Adipisicing anim odi. Adipisicing anim odi. Adipisicing anim odi. Adipisicing anim odi. Adipisicing anim odi.&nbsp;', 'upload/blog-image/784292447.png', 2, 1, 1, NULL, '2023-03-03 08:24:24', '2023-03-07 04:53:49'),
+(3, 'Facere et in molesti', 'cvgv-5', 'Illo eiusmod aute qu', 'Deleniti rerum quia .&nbsp;', 'upload/blog-image/1072099063.png', 2, 1, 1, NULL, '2023-03-03 10:30:23', '2023-03-07 04:53:49'),
+(4, 'Amet lorem proident', 'fgghh-45', 'Aut veritatis enim d', 'Ut accusamus quo vol. tui kor', 'upload/blog-image/135172545.png', 2, 1, 1, 1, '2023-03-03 10:44:27', '2023-03-07 04:53:49'),
+(5, 'dsfsd', 'fdfdf-gfgf5', 'sdfsdf', '<p>sdfsd</p>', 'upload/blog-image/47671536.png', 2, 1, 1, 1, '2023-03-03 10:45:33', '2023-03-07 04:53:49'),
+(6, 'Optio rerum atque v', 'fffdgf-fgf', 'Deleniti obcaecati q', 'Ut ex ut at assumend.&nbsp;', 'upload/blog-image/2108210837.jpg', 2, 1, 1, 1, '2023-03-04 04:09:34', '2023-03-07 04:53:49'),
+(7, 'Qui laudantium maxi', 'ffgf-55', 'Sunt cum consequat', 'Distinctio. Ad labor.&nbsp;', 'upload/blog-image/90395079.jpg', 2, 1, 1, 1, '2023-03-04 04:11:12', '2023-03-07 04:53:49'),
+(9, 'Sunt quo ut qui est', 'dd-fd5', 'Nemo excepteur aperi', 'Culpa dolor dolore f.&nbsp;', 'upload/blog-image/1600276973.jpg', 2, 1, 1, 1, '2023-03-04 04:54:59', '2023-03-07 04:53:49'),
 (10, 'Aliquip beatae delen', 'fgg-dfdf-21', 'Repudiandae aut exer', 'Proident, provident.&nbsp;', 'upload/blog-image/1349148605.jpg', 2, 1, 1, 0, '2023-03-04 05:16:01', '2023-03-04 05:18:55'),
 (11, 'Nobis ut et accusamu', 'gfg-fgfg', 'Nihil eum duis quam', 'Dolor temporibus eum. Dolor temporibus eum. Dolor temporibus eum. Dolor temporibus eum. Dolor temporibus eum. Dolor temporibus eum. Dolor temporibus eum. Dolor temporibus eum. Dolor temporibus eum. Dolor temporibus eum. Dolor temporibus eum. Dolor temporibus eum. Dolor temporibus eum. Dolor temporibus eum. Dolor temporibus eum. Dolor temporibus eum. Dolor temporibus eum. Dolor temporibus eum. Dolor temporibus eum.&nbsp;', 'upload/blog-image/469661259.jpg', 2, 1, 1, 1, '2023-03-04 08:43:31', '2023-03-04 08:43:31'),
-(12, 'Aliquid cillum nemo', 'sdsd-sdddf', 'Voluptatem Ea delec', 'Nam autem ea non vol.Nam autem ea non vol.Nam autem ea non vol.Nam autem ea non vol.Nam autem ea non vol.Nam autem ea non vol.Nam autem ea non vol.Nam autem ea non vol.Nam autem ea non vol.Nam autem ea non vol.Nam autem ea non vol.Nam autem ea non vol.Nam autem ea non vol.Nam autem ea non vol.Nam autem ea non vol.Nam autem ea non vol.Nam autem ea non vol.Nam autem ea non vol.Nam autem ea non vol.Nam autem ea non vol.Nam autem ea non vol.Nam autem ea non vol.Nam autem ea non vol.Nam autem ea non vol.Nam autem ea non vol.Nam autem ea non vol.Nam autem ea non vol.Nam autem ea non vol.Nam autem ea non vol.Nam autem ea non vol.Nam autem ea non vol.Nam autem ea non vol.Nam autem ea non vol.Nam autem ea non vol.Nam autem ea non vol.Nam autem ea non vol.Nam autem ea non vol.Nam autem ea non vol.Nam autem ea non vol.Nam autem ea non vol.Nam autem ea non vol.Nam autem ea non vol.', 'upload/blog-image/892474031.jpg', 1, 1, 1, 1, '2023-03-04 08:44:53', '2023-03-04 08:44:53'),
+(12, 'Aliquid cillum nemo', 'sdsd-sdddf', 'Voluptatem Ea delec', 'Nam autem ea non vol.Nam autem ea non vol.Nam autem ea non vol.Nam autem ea non vol.Nam autem ea non vol.Nam autem ea non vol.Nam autem ea non vol.Nam autem ea non vol.Nam autem ea non vol.Nam autem ea non vol.Nam autem ea non vol.Nam autem ea non vol.Nam autem ea non vol.Nam autem ea non vol.Nam autem ea non vol.Nam autem ea non vol.Nam autem ea non vol.Nam autem ea non vol.Nam autem ea non vol.Nam autem ea non vol.Nam autem ea non vol.Nam autem ea non vol.Nam autem ea non vol.Nam autem ea non vol.Nam autem ea non vol.Nam autem ea non vol.Nam autem ea non vol.Nam autem ea non vol.Nam autem ea non vol.Nam autem ea non vol.Nam autem ea non vol.Nam autem ea non vol.Nam autem ea non vol.Nam autem ea non vol.Nam autem ea non vol.Nam autem ea non vol.Nam autem ea non vol.Nam autem ea non vol.Nam autem ea non vol.Nam autem ea non vol.Nam autem ea non vol.Nam autem ea non vol.', 'upload/blog-image/892474031.jpg', 2, 1, 1, 1, '2023-03-04 08:44:53', '2023-03-07 04:53:49'),
 (13, 'Quisquam dolore amet', 'quisquam-dolore-amet', 'Duis perspiciatis p', 'Dolore velit eius mo.&nbsp;', 'upload/blog-image/1162485559.jpg', 3, 1, 1, 0, '2023-03-05 06:16:51', '2023-03-05 06:16:51'),
 (14, 'Quasi quibusdam aliq', 'quasi-quibusdam-aliq', 'Necessitatibus minim', 'Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.', 'upload/blog-image/1268316577.jpg', 3, 1, 1, 0, '2023-03-06 02:41:39', '2023-03-06 02:41:39'),
 (15, 'Elit totam ipsam no', 'elit-totam-ipsam-no', 'Quaerat natus qui co', 'Tempor pariatur? Dol.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.', 'upload/blog-image/475233621.jpg', 3, 1, 1, 0, '2023-03-06 02:42:04', '2023-03-06 02:42:04'),
-(16, 'Voluptatibus harum n', 'voluptatibus-harum-n', 'Quidem aperiam susci', 'Ad eos eaque quae no.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.', 'upload/blog-image/768939337.jpg', 1, 1, 1, 0, '2023-03-06 02:42:26', '2023-03-06 02:42:26'),
-(17, 'Esse tempor est enim', 'esse-tempor-est-enim', 'Debitis id laborum i', 'Similique voluptatem.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.', 'upload/blog-image/280726316.jpg', 1, 1, 1, 1, '2023-03-06 02:43:37', '2023-03-06 02:43:37'),
-(18, 'Nam debitis non temp', 'nam-debitis-non-temp', 'Voluptatum et magni', '<p>Et sapiente non quod.<span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><br></p>', 'upload/blog-image/583762305.jpg', 3, 1, 1, 1, '2023-03-06 02:44:28', '2023-03-06 02:44:28');
+(16, 'Voluptatibus harum n', 'voluptatibus-harum-n', 'Quidem aperiam susci', 'Ad eos eaque quae no.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.', 'upload/blog-image/768939337.jpg', 2, 1, 1, 0, '2023-03-06 02:42:26', '2023-03-07 04:53:49'),
+(17, 'Esse tempor est enim', 'esse-tempor-est-enim', 'Debitis id laborum i', 'Similique voluptatem.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.Et sapiente non quod.', 'upload/blog-image/280726316.jpg', 2, 1, 1, 1, '2023-03-06 02:43:37', '2023-03-07 04:53:49'),
+(18, 'Nam debitis non temp', 'nam-debitis-non-temp', 'Voluptatum et magni', '<p>Et sapiente non quod.<span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod.</span><span style=\"font-size: 1rem;\">Et sapiente non quod. test</span><br></p>', 'upload/blog-image/758252001.jpg', 3, 1, 1, 1, '2023-03-06 02:44:28', '2023-03-07 05:25:26');
 
 -- --------------------------------------------------------
 
@@ -73,9 +73,9 @@ INSERT INTO `blogs` (`id`, `title`, `slug`, `description`, `body`, `image`, `cat
 
 CREATE TABLE `categories` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `slug` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `description` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name` varchar(255) NOT NULL,
+  `slug` varchar(255) NOT NULL,
+  `description` text DEFAULT NULL,
   `status` tinyint(4) NOT NULL DEFAULT 1 COMMENT '1=published, 0=unpublished',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -86,9 +86,9 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `name`, `slug`, `description`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'Music', 'music', 'hello this is simple description', 1, '2023-03-03 08:17:04', '2023-03-03 08:17:04'),
 (2, 'Uncategorized', 'uncategorized', NULL, 1, '2023-03-04 05:01:36', '2023-03-04 05:01:36'),
-(3, 'plugins', 'plugins', NULL, 1, '2023-03-04 05:14:09', '2023-03-04 05:14:09');
+(3, 'plugins', 'plugins', NULL, 1, '2023-03-04 05:14:09', '2023-03-04 05:14:09'),
+(6, 'Musics', 'musics', 'Best Music', 1, '2023-03-07 04:54:01', '2023-03-07 04:58:18');
 
 -- --------------------------------------------------------
 
@@ -98,11 +98,11 @@ INSERT INTO `categories` (`id`, `name`, `slug`, `description`, `status`, `create
 
 CREATE TABLE `failed_jobs` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `uuid` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `connection` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `queue` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `uuid` varchar(255) NOT NULL,
+  `connection` text NOT NULL,
+  `queue` text NOT NULL,
+  `payload` longtext NOT NULL,
+  `exception` longtext NOT NULL,
   `failed_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -114,7 +114,7 @@ CREATE TABLE `failed_jobs` (
 
 CREATE TABLE `migrations` (
   `id` int(10) UNSIGNED NOT NULL,
-  `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `migration` varchar(255) NOT NULL,
   `batch` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -138,8 +138,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 --
 
 CREATE TABLE `password_reset_tokens` (
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `token` varchar(255) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -151,11 +151,11 @@ CREATE TABLE `password_reset_tokens` (
 
 CREATE TABLE `personal_access_tokens` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `tokenable_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tokenable_type` varchar(255) NOT NULL,
   `tokenable_id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `token` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `abilities` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name` varchar(255) NOT NULL,
+  `token` varchar(64) NOT NULL,
+  `abilities` text DEFAULT NULL,
   `last_used_at` timestamp NULL DEFAULT NULL,
   `expires_at` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -170,16 +170,16 @@ CREATE TABLE `personal_access_tokens` (
 
 CREATE TABLE `settings` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `footer` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `description` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `google` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `author` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `keywords` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `tags` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `url` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `website_logo` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `fav_icon` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name` varchar(255) NOT NULL,
+  `footer` text DEFAULT NULL,
+  `description` text DEFAULT NULL,
+  `google` text DEFAULT NULL,
+  `author` text DEFAULT NULL,
+  `keywords` text DEFAULT NULL,
+  `tags` text DEFAULT NULL,
+  `url` text DEFAULT NULL,
+  `website_logo` text DEFAULT NULL,
+  `fav_icon` text DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -199,13 +199,13 @@ INSERT INTO `settings` (`id`, `name`, `footer`, `description`, `google`, `author
 
 CREATE TABLE `users` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
-  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `image` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `description` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `password` varchar(255) NOT NULL,
+  `image` text DEFAULT NULL,
+  `description` text DEFAULT NULL,
+  `remember_token` varchar(100) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -283,13 +283,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `blogs`
 --
 ALTER TABLE `blogs`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
