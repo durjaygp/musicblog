@@ -47,9 +47,11 @@ Route::group(['prefix'=>'admin/','middleware'=>'auth'],function(){
 
     //-----Blog Routes---------------
     Route::get('/blog/add', [BlogController::class, 'index'])->name('admin.blog');
-    Route::get('/blog/edit/{id}', [BlogController::class, 'edit'])->name('blog.edit');
     Route::post('/blog/save', [BlogController::class, 'store'])->name('blog.store');
     Route::get('/blog/manage/' ,[BlogController::class, 'manageBlog'])->name('blog.manage');
+    Route::get('/blog/edit/{id}', [BlogController::class, 'edit'])->name('blog.edit');
+    Route::post('/blog/update', [BlogController::class, 'update'])->name('blog.update');
+    Route::get('/blog/delete/{id}', [BlogController::class, 'delete'])->name('blog.delete');
 
     //-------User Settings------------
 

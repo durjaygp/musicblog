@@ -33,8 +33,9 @@
                             </div>
                             <!-- /.card-header -->
                             <!-- form start -->
-                            <form action="" method="post" enctype="multipart/form-data">
+                            <form action="{{route('blog.update')}}" method="post" enctype="multipart/form-data">
                                 @csrf
+                                <input type="hidden" name="id" value="{{$blog->id}}">
                                 <div class="card-body">
                                     <div class="form-group">
                                         <label>Blog Title <span class="text-danger">*</span></label>
@@ -49,30 +50,32 @@
                                         <select class="custom-select" name="category_id">
                                             <option > Select Category</option>
                                             @foreach($categories as $category)
-                                                <option value="{{$category->id}}">{{$category->name}}</option>
+                                                <option {{$category->id==$blog->category_id ? 'selected':''}} value="{{$category->id}}">{{$category->name}}</option>
                                             @endforeach
                                         </select>
                                     </div>
                                     <div class="form-group">
                                         <label>Blog Image<span class="text-danger">*</span></label>
+                                        <img src="{{asset($blog->image)}}" class="img-fluid" alt="">
                                         <input class="dropify" type="file" name="image" accept="image/*">
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Blog Main Content (Body) <span class="text-danger">*</span></label>
-                                        <textarea name="body" id="summernote" cols="30" rows="7" class="form-control" placeholder="Write a short Description in 125 words"></textarea>
+                                        <textarea name="body" id="summernote" cols="30" rows="7" class="form-control" placeholder="Write a short Description in 125 words">{{$blog->body}}</textarea>
                                     </div>
                                     <div class="form-group">
                                         <label>Select Status</label>
                                         <select class="custom-select" name="status">
-                                            <option value="1">Published</option>
-                                            <option value="0">Unpublished</option>
+                                            <option {{$blog->status==1 ? 'selected':''}} value="1">Published</option>
+                                            <option {{$blog->status==0 ? 'selected':''}} value="0">Unpublished</option>
                                         </select>
                                     </div>
                                     <div class="form-group">
                                         <label>Feature Status</label>
                                         <select class="custom-select" name="feature">
-                                            <option value="1">Active</option>
-                                            <option value="0">Disabled</option>
+                                            <option {{$blog->feature==1 ? 'selected':''}} value="1">Active</option>
+                                            <option {{$blog->feature==0 ? 'selected':''}} value="0">Disabled</option>
+                                            
                                         </select>
                                     </div>
                                 </div>

@@ -47,8 +47,8 @@
                                     <div class="form-group">
                                         <label>Select Status</label>
                                         <select class="custom-select" name="status">
-                                            <option value="1">Published</option>
-                                            <option value="0">Unpublished</option>
+                                            <option {{$category->status==1 ? 'selected':''}} value="1">Published</option>
+                                            <option {{$category->status==0 ? 'selected':''}} value="0">Unpublished</option>
                                         </select>
                                     </div>
                                 </div>

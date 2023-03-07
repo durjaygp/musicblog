@@ -10,11 +10,13 @@ use Illuminate\Support\Str;
 class CategoryController extends Controller
 {
     public $blog, $category;
+    
     public function index(){
         return view('admin.category.create',[
             'categories'=>Category::latest()->get(),
         ]);
     }
+
     public function store(Request $request){
         $request->validate([
             'name'=>'required|unique:categories',
@@ -30,6 +32,22 @@ class CategoryController extends Controller
         return redirect()->back()->with('success','Category Created Successfully');
     }
 
+    public function edit($id){
+        return view('admin.category.edit_category',[
+            'category' => Category::find($id),
+        ]);
+    }
+
+    public function update(Request $request){
+        $this->category = Category::find($request->id);
+        $this->category->name = $request->name;
+        $this->category->slug = Str::slug($request->name, '-');
+        $this->category->description = $request->description;
+        $this->category->status = $request->status;
+        $this->category->save();
+        return redirect()->back()->with('success', 'Category Updated Successfully');
+    }
+
     public function delete($id){
         $category_default_id = Category::where('name','Uncategorized')->first()->id;
         $this->category = Category::find($id);
@@ -41,18 +59,4 @@ class CategoryController extends Controller
         return redirect()->back()->with('success', 'Category Has been deleted.');
     }
 
-    public function edit($id){
-        return view('admin.category.edit_category',[
-            'category' => Category::find($id),
-        ]);
-    }
-    public function update(Request $request){
-        $this->category = Category::find($request->id);
-        $this->category->name = $request->name;
-        $this->category->slug = Str::slug($request->name, '-');
-        $this->category->description = $request->description;
-        $this->category->status = $request->status;
-        $this->category->save;
-        return redirect()->back()->with('success', 'Category Updated Successfully');
-    }
 }

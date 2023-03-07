@@ -55,6 +55,31 @@ class BlogController extends Controller
     public function edit($id){
         return view('admin.blog.edit_blog',[
             'blog'=>Blog::find($id),
+            'categories'=> Category::all(),
         ]);
     }
+    public function update(Request $request){
+        $this->blog = Blog::find($request->id);
+        $this->blog->title = $request->title;
+        $this->blog->slug = Str::slug($request->title,'-');
+        $this->blog->description = $request->description;
+        $this->blog->body = $request->body;
+        $this->blog->feature = $request->feature;
+        $this->blog->category_id = $request->category_id;
+        $this->blog->status = $request->status;
+        if($request->file('image')){
+            if(file_exists($this->blog->image)){
+                unlink($this->blog->image);
+            }
+            $this->blog->image = $this->saveImage($request);
+        }
+        $this->blog->save();
+        return redirect()->back()->with('success','Blog Created Successfully');
+    }
+
+    public function delete($id){
+        $this->blog = Blog::find($id)->delete();
+        return redirect()->back()->with('success', 'Blog Has been deleted.');
+    }
+
 }

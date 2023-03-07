@@ -57,8 +57,8 @@
                                                             <td>{{Str::limit($blog->description, 150)}}</td>
                                                             <td class="{{$blog->status==1? 'text-success':'text-danger'}}">{{$blog->status == 1? 'Published': 'Unpublished'}}</td>
                                                             <td>
-                                                                <a href="" class="btn btn-sm btn-primary"> <i class="fas fa-edit"></i></a>
-                                                                <a href="" class="btn  btn-sm  btn-danger"> <i class="fas fa-trash"></i></a>
+                                            <a href="{{route('blog.edit',$blog->id)}}" class="btn btn-sm btn-primary"> <i class="fas fa-edit"></i></a>
+                                            <a href="{{route('blog.delete',['id'=>$blog->id])}}" class="btn  btn-sm  btn-danger"> <i class="fas fa-trash"></i></a>
                                                             </td>
                                                         </tr>
                                                     @endforeach

@@ -1,0 +1,38 @@
+cp .env.example .env
+php artisan key:generate
+composer i
+npm i
+npm run build
+
+
+
+####################################################
+
+what i have done:
+
+FrontEnd:
+1. Homepage,
+2. single post page
+3. recent blog
+4. footer recent and category
+
+BackEnd:
+1. Category create Delete=> update is needed
+2. Blog Created => update and deleted is needed
+3. Admin update => but password has some error
+
+----------------------------------------------------------------
+
+What you need to do: 
+
+FrontEnd
+1. Category page, category sidebar -
+2. Author Page -
+3. Search Page -
+4. Header a five latest category, -
+5.
+
+BackEnd:
+1. Category Update
+2. Post update and Delete
+3.
