@@ -74,11 +74,18 @@ class BlogController extends Controller
             $this->blog->image = $this->saveImage($request);
         }
         $this->blog->save();
-        return redirect()->back()->with('success','Blog Created Successfully');
+        return redirect()->back()->with('success','Blog Updated Successfully');
     }
 
     public function delete($id){
-        $this->blog = Blog::find($id)->delete();
+        $this->blog = Blog::find($id);
+        if($this->blog->image){
+            if(file_exists($this->blog->image)){
+                unlink($this->blog->image);
+            }
+            $this->blog->image = $this->saveImage($request);
+        }
+        $this->blog->delete();
         return redirect()->back()->with('success', 'Blog Has been deleted.');
     }
 
