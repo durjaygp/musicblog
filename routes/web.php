@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\FrontBlogController;
 use App\Http\Controllers\Admin\AdminUserController;
 use App\Http\Controllers\Admin\WebsiteSettingController;
+use App\Http\Controllers\Admin\AdminMakeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -65,6 +66,13 @@ Route::group(['prefix'=>'admin/','middleware'=>'auth'],function(){
     //-------Website Settings------------
     Route::get('/website/settings/', [WebsiteSettingController::class, 'index'])->name('admin.setting');
     Route::post('/website/settings/update', [WebsiteSettingController::class, 'update'])->name('update.setting');
+
+    //----------Admin Create-------------
+    Route::get('/user/admin/create', [AdminMakeController::class,'create'])->name('admin.create');
+    Route::get('/user/admin/edit/{id}', [AdminMakeController::class,'edit'])->name('admin.create.edit');
+    Route::get('/user/admin/delete/{id}', [AdminMakeController::class,'delete'])->name('admin.create.delete');
+    Route::post('/user/admin/edit/update', [AdminMakeController::class,'update'])->name('admin.create.update');
+    Route::post('/user/admin/create/save', [AdminMakeController::class,'save'])->name('admin.create.save');
 
 
 

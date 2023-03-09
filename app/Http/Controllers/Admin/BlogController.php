@@ -83,7 +83,7 @@ class BlogController extends Controller
             if(file_exists($this->blog->image)){
                 unlink($this->blog->image);
             }
-            $this->blog->image = $this->saveImage($request);
+           // $this->blog->image = $this->saveImage($request);
         }
         $this->blog->delete();
         return redirect()->back()->with('success', 'Blog Has been deleted.');

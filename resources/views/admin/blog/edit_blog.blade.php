@@ -54,10 +54,19 @@
                                             @endforeach
                                         </select>
                                     </div>
-                                    <div class="form-group">
-                                        <label>Blog Image<span class="text-danger">*</span></label>
-                                        <img src="{{asset($blog->image)}}" class="img-fluid" alt="">
-                                        <input class="dropify" type="file" name="image" accept="image/*">
+                                    <div class="row">
+                                        <div class="col-md-8">
+                                            <div class="form-group">
+                                                <label>Blog Image</label>
+                                                <input class="dropify" type="file" name="image" accept="image/*">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>Existing Image</label> <br>
+                                                <img src="{{asset($blog->image)}}" alt="" width="300px" height="300px">
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Blog Main Content (Body) <span class="text-danger">*</span></label>
@@ -75,7 +84,7 @@
                                         <select class="custom-select" name="feature">
                                             <option {{$blog->feature==1 ? 'selected':''}} value="1">Active</option>
                                             <option {{$blog->feature==0 ? 'selected':''}} value="0">Disabled</option>
-                                            
+
                                         </select>
                                     </div>
                                 </div>

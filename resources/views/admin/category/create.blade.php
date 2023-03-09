@@ -26,7 +26,7 @@
                 <!-- Info boxes -->
                 <div class="row">
                     <div class="col-md-6">
-                        <div class="card card-primary">
+                        <div class="card card-default">
                             <div class="card-header">
                                 <h3 class="card-title">Create New Category</h3>
                             </div>
@@ -62,7 +62,7 @@
                           <div class="container-fluid">
                             <div class="row">
                               <div class="col-12">
-                                <div class="card card-primary">
+                                <div class="card card-default">
                                   <div class="card-header">
                                     <h3 class="card-title">Category List</h3>
                                   </div>
@@ -101,8 +101,6 @@
                             <!-- /.row -->
                           </div>
                      </section>
-
-
                     </div>
                 </div>
                 <!-- /.row -->

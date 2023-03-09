@@ -56,6 +56,10 @@
                                         <input type="text" name="keywords" class="form-control" placeholder="Website Keywords" value="{{$setting->keywords}}">
                                     </div>
                                     <div class="form-group">
+                                        <label for="exampleInputEmail1">Website Tags</label>
+                                        <input type="text" name="tags" class="form-control" placeholder="Website Tags" value="{{$setting->tags}}">
+                                    </div>
+                                    <div class="form-group">
                                         <label for="exampleInputEmail1">Website Description <small>(It also appear in Footer About Us)</small></label>
                                         <textarea name="description" id="" cols="10" rows="5" class="form-control" placeholder="Write a short Description">{{$setting->description}}</textarea>
                                     </div>
@@ -64,13 +68,13 @@
                                         <input type="text" name="google" class="form-control" placeholder="Enter Category Title" value="{{$setting->google}}">
                                     </div>
                                     <div class="row">
-                                        <div class="col-md-6">
+                                        <div class="col-md-8">
                                             <div class="form-group">
                                                 <label>Website Image, LOGO <small>(Width 325px X Height 100px)</small></label>
                                                 <input class="dropify" type="file" name="website_logo" accept="image/*">
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                             <div class="form-group">
                                                 <label>Existing Image</label> <br>
                                                 <img src="{{asset($setting->website_logo)}}" alt="">
@@ -78,13 +82,13 @@
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-md-6">
+                                        <div class="col-md-8">
                                             <div class="form-group">
                                                 <label>Website FavIcon <small> (Width 80px X Height 80px)</small></label>
                                                 <input class="dropify" type="file" name="fav_icon" accept="image/*">
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                             <div class="form-group">
                                                 <label>Existing Image</label> <br>
                                                 <img src="{{asset($setting->fav_icon)}}" alt="" width="80px" height="80px">

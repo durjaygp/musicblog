@@ -14,7 +14,7 @@
                             <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
                             <li class="breadcrumb-item active">Blog</li>
                         </ol>
-                        <a href="{{route('blog.manage')}}" class="btn btn-primary rounded"><i class="fa fa-arrow-left"></i> Blog List</a>
+
                     </div><!-- /.col -->
                 </div><!-- /.row -->
             </div><!-- /.container-fluid -->
@@ -27,9 +27,9 @@
                 <!-- Info boxes -->
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="card card-primary">
+                        <div class="card card-default">
                             <div class="card-header">
-                                <h3 class="card-title">Create New Blog</h3>
+                                <h3 class="card-title"><a href="{{route('blog.manage')}}" class="btn btn-outline-primary rounded"><i class="fa fa-arrow-left"></i> Blog List</a></h3>
                             </div>
                             <!-- /.card-header -->
                             <!-- form start -->
@@ -49,7 +49,7 @@
                                         <select class="custom-select" name="category_id">
                                             <option > Select Category</option>
                                             @foreach($categories as $category)
-                                            <option value="{{$category->id}}">{{$category->name}}</option>
+                                                <option value="{{$category->id}}">{{$category->name}}</option>
                                             @endforeach
                                         </select>
                                     </div>

@@ -57,4 +57,6 @@ class AdminUserController extends Controller
         $this->user->save();
         return redirect()->back()->with('success','User Updated');
     }
+
+
 }

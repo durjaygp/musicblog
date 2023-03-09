@@ -27,14 +27,17 @@ class AppServiceProvider extends ServiceProvider
     {
         Paginator::useBootstrap();
 
-        if(Schema::hasTable('settings')){
-            $website = Setting::find(1);
-            View::share('website', $website);
-        }
+         $website = Setting::find(1);
+         View::share('website', $website);
+
+        // if(Schema::hasTable('settings')){
+        //     $website = Setting::find(1);
+        //     View::share('website', $website);
+        // }
 
         if(Schema::hasTable('categories')){
             View::composer('frontEnd.include.header', function ($view){
-                $view->with('header_categories', Category::latest()->take(5)->get());
+                $view->with('header_categories', Category::latest()->take(8)->get());
             });
         }
 

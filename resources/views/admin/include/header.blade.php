@@ -4,12 +4,6 @@
         <li class="nav-item">
             <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
         </li>
-        <li class="nav-item d-none d-sm-inline-block">
-            <a href="{{route('home')}}" class="nav-link" target="_blank">Home Page</a>
-        </li>
-        <li class="nav-item d-none d-sm-inline-block">
-            <a href="#" class="nav-link">Contact</a>
-        </li>
     </ul>
 
     <!-- Right navbar links -->
@@ -17,7 +11,7 @@
         <!-- Navbar Search -->
         <li class="nav-item">
             <a class="nav-link" href="{{route('home')}}" target="_blank">
-                <i class="fas fa-mouse"></i><span class="text-dark"> Visit Website</span>
+                <i class="fas fa-globe"></i><span class="text-dark"> Website</span>
             </a>
         </li>
         <li class="nav-item dropdown">

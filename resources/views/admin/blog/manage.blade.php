@@ -14,7 +14,6 @@
                             <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
                             <li class="breadcrumb-item active">Manage Blog</li>
                         </ol>
-                        <a href="{{route('admin.blog')}}" class="btn btn-primary"><i class="fa fa-plus"></i> Create Blog Post</a>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
             </div><!-- /.container-fluid -->
@@ -31,9 +30,9 @@
                             <div class="container-fluid">
                                 <div class="row">
                                     <div class="col-12">
-                                        <div class="card card-primary">
+                                        <div class="card card-default">
                                             <div class="card-header">
-                                                <h3 class="card-title">Blog List</h3>
+                                                <h3 class="card-title"><a href="{{route('admin.blog')}}" class="btn btn-outline-primary"><i class="fa fa-plus"></i> Create Blog Post</a></h3>
                                             </div>
                                             <!-- /.card-header -->
                                             <div class="card-body">
